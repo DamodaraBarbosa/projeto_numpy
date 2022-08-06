@@ -12,5 +12,6 @@ catalog_strings = np.array([names, musical_style, solo_band_duo])
 catalog_numbers = np.array([fans, likes, cash])
 complete_catalog = Catalog(catalog_strings, catalog_numbers)
 
-complete_catalog.fans_likes_conversion()
-print(complete_catalog.artist_biggest_conversion())
+print(complete_catalog.ranking_artists_fans())
+# complete_catalog.fans_likes_conversion()
+# print(complete_catalog.artist_biggest_conversion())
