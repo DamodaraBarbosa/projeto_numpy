@@ -7,7 +7,7 @@ art_banda = dict()
 catalogo = list()
 
 
-for contador in range(1, 5000):
+for contador in range(1, 11):
     generos = ['MPB', 'Rock', 'Indie', 'Funk', 'Sertanejo', 'Hip hop', 'Samba', 'Pop', 'Eletronica']
     genero_random = choice(generos)
 
