@@ -21,7 +21,13 @@ class Catalog:
         return self.conversion
 
     def artist_biggest_conversion(self):
-        artist_conversion = np.array([self.strings[0]])
+        artist_conversion = np.column_stack([self.strings[0], self.conversion])
+        #retorna o index do elemento dentro de um array no formato: (array([8], dtype=int64),)
+        index_max_conversion = (np.where(self.conversion == max(self.conversion)))
+        #retorna o número, o valor do index        
+        print(index_max_conversion[0][0])
+        
+        return artist_conversion[index_max_conversion, 0]
 
     def count_musical_style(self):
         #contagem de elementos que se repetem em um array
