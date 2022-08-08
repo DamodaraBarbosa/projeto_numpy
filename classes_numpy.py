@@ -7,6 +7,9 @@ class Catalog:
         self.numbers = numbers
         self.conversion = 0
     
+    def num_artistis(self):
+        return f'São ao todo {len(self.strings[0])} artistas na plataforma.'
+    
     def sum_fans(self):
         return f'São ao todo {int(self.numbers[0].sum())} fãs na plataforma.'
     
@@ -41,10 +44,26 @@ class Catalog:
     def count_musical_style(self):
         #contagem de elementos que se repetem em um array
         count_musical_style = collections.Counter(self.strings[1])
-        return count_musical_style['MPB']
+
+        print('\033[1;33m--\033[m'*28)
+        print(f'{"Gênero musical":<35}', end='')
+        print('Nº de artistas')
+        print('\033[1;33m--\033[m'*28)
+
+        for key, value in count_musical_style.items():
+            print(f'{key:<40}', end=' ')
+            print(value)
+            print('\033[1;33m--\033[m'*28)
+
     
     def ranking_artists_fans(self):
-        return np.sort(self.numbers[0])
+        #argsort indica os indexs dos elementos em ordem do array
+        index_ranking_fans = np.argsort(self.numbers[0])
+        sorted_fans = self.numbers[0][index_ranking_fans]
+        sorted_artists_fans = self.strings[0][index_ranking_fans]
+        ranking_fans = np.array([sorted_artists_fans, sorted_fans])
+
+        return print(ranking_fans[:])
     
     @staticmethod
     def mean_menu():
