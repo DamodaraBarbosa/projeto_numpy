@@ -1,7 +1,7 @@
 from random import randint, uniform, choice, randrange
 
 from matplotlib import artist
-from func_art_banda import nome_eletronica, nome_funk, nome_hiphop, nome_indie, nome_mpb, nome_pop, nome_rock, nome_samba, nome_sertanejo, num_curtidas, num_fas, num_faturamento
+from utils.func_art_banda import nome_eletronica, nome_funk, nome_hiphop, nome_indie, nome_mpb, nome_pop, nome_rock, nome_samba, nome_sertanejo, num_curtidas, num_fas, num_faturamento
 
 art_banda = dict()
 catalogo = list()

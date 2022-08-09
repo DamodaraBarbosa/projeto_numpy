@@ -13,6 +13,7 @@ catalog_strings = np.array([names, musical_style, solo_band_duo])
 catalog_numbers = np.array([fans, likes, cash])
 catalog_analysis = Analysis(catalog_strings, catalog_numbers)
 
-print(catalog_analysis.ranking_artists_fans())
+print(catalog_analysis.fans_likes_conversion())
+print(catalog_analysis.artist_biggest_conversion())
 # complete_catalog.fans_likes_conversion()
 # print(complete_catalog.artist_biggest_conversion())
