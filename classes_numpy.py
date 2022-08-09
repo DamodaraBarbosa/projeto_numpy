@@ -1,6 +1,12 @@
 import collections
 import numpy as np
 
+def linha():
+    print('\033[1;33m--\033[m'*28)
+
+def linha2():
+    print('\033[1;33m-=\033[m'*28)
+
 class Catalog:
     def __init__(self, strings, numbers) -> None:
         self.strings = strings
@@ -45,10 +51,10 @@ class Catalog:
         #contagem de elementos que se repetem em um array
         count_musical_style = collections.Counter(self.strings[1])
 
-        print('\033[1;33m--\033[m'*28)
+        linha()
         print(f'{"Gênero musical":<35}', end='')
         print('Nº de artistas')
-        print('\033[1;33m--\033[m'*28)
+        linha()
 
         for key, value in count_musical_style.items():
             print(f'{key:<40}', end=' ')
@@ -62,8 +68,25 @@ class Catalog:
         sorted_fans = self.numbers[0][index_ranking_fans]
         sorted_artists_fans = self.strings[0][index_ranking_fans]
         ranking_fans = np.array([sorted_artists_fans, sorted_fans])
+        ranking_fans_stacked = np.column_stack(ranking_fans)
 
-        return print(ranking_fans[:])
+        linha2()
+        print('\tTOP 10 ARTISTAS')
+        linha2()
+        print('Posição', end='    ')
+        print('Artista', end='    ')
+        print('Fãs')
+        linha()
+        
+        for cont in range(-1, -11, -1):
+            print(f'{-cont}º', end='    ')
+            print(ranking_fans_stacked[cont, 0], end= '    ')
+            print(ranking_fans_stacked[cont, 1])
+            if cont == -10:
+                pass
+            else:
+                linha()
+        linha2()
     
     @staticmethod
     def mean_menu():
