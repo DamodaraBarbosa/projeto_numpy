@@ -1,5 +1,6 @@
 import numpy as np
 from classes_numpy import Catalog
+from utils.classes_analysis import Analysis
 
 names = np.loadtxt('nome_catalogo.txt', dtype=str)
 musical_style = np.loadtxt('genero_catalogo.txt', dtype=str)
@@ -10,8 +11,8 @@ cash = np.loadtxt('faturament_catalogo.txt')
 
 catalog_strings = np.array([names, musical_style, solo_band_duo])
 catalog_numbers = np.array([fans, likes, cash])
-complete_catalog = Catalog(catalog_strings, catalog_numbers)
+catalog_analysis = Analysis(catalog_strings, catalog_numbers)
 
-complete_catalog.ranking_artists_fans()
+print(catalog_analysis.ranking_artists_fans())
 # complete_catalog.fans_likes_conversion()
 # print(complete_catalog.artist_biggest_conversion())
