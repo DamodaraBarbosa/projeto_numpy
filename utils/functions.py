@@ -12,3 +12,12 @@ def menu_ranking_fans():
         print(f'{"Artista":<25}', end='')
         print('Fãs')
         linha()
+
+def menu_ranking_conversion():
+        linha2()
+        print(f'{"                  TOP 10 ARTISTAS"}')
+        linha2()
+        print(f'{"Posição":<18}', end='')
+        print(f'{"Artista":<25}', end='')
+        print('Conversão (%)')
+        linha()

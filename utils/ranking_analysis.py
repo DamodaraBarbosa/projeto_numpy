@@ -8,33 +8,23 @@ class Analysis(Catalog):
         super().__init__(strings, numbers)
         self.conversion = 0
 
-    def fans_likes_conversion(self):
-        self.conversion = (self.numbers[1]/self.numbers[0]) * 100
-        return self.conversion
+    def artist_ranking_conversion(self):
+        #self.numbers[:, 1] equivale ao nº de curtidas e self.numbers[:, 0] ao nº de fãs
+        self.conversion = (self.numbers[:, 1]/self.numbers[:, 0]) * 100
+        index_ranking_conversion = np.argsort(self.conversion)
+        # o uso de [index_ranking_conversion] ordena o nome dos artistas com maior conversão de fãs em likes
+        name_of_artists = self.strings[:, 0][index_ranking_conversion]
+        # o uso de [index_ranking_conversion] deixa a conversão de fãs em likes em ordem crescente
+        conversion_fans_likes = self.conversion[index_ranking_conversion]
+        ranking_conversion_1D = np.array([name_of_artists, conversion_fans_likes])
+        ranking_conversion_2D = np.column_stack(ranking_conversion_1D)
 
-    def artist_biggest_conversion(self):
-        artist_conversion = np.column_stack([self.strings[0], self.conversion])
-        #retorna o index do elemento dentro de um array no formato: (array([8], dtype=int64),)
-        index_max_conversion = (np.where(self.conversion == max(self.conversion)))
-        #retorna o número, o valor do index        
-        print(index_max_conversion[0][0])
+        for cont in range(-1, -11, -1):
+            print(f'{-cont}', end='')
+            print(f'{"º":<10}', end='')
+            print(f'{ranking_conversion_2D[cont, 0]}', end='')
+            print(f'{ranking_conversion_2D[cont, 1]}')
 
-        return artist_conversion[index_max_conversion, 0]
-
-    def count_musical_style(self):
-        #contagem de elementos que se repetem em um array
-        count_musical_style = collections.Counter(self.strings[1])
-
-        linha()
-        print(f'{"Gênero musical":<35}', end='')
-        print('Nº de artistas')
-        linha()
-
-        for key, value in count_musical_style.items():
-            print(f'{key:<40}', end=' ')
-            print(value)
-            print('\033[1;33m--\033[m'*28)
-        
     # def ranking_artists_fans(self):
     #     #argsort indica os indexs dos elementos em ordem do array
     #     number_of_fans = self.numbers[0]
