@@ -12,7 +12,7 @@ catalog_strings = np.column_stack([names, musical_style, solo_band_duo])
 catalog_numbers = np.column_stack([fans, likes, cash])
 catalog_analysis = Analysis(catalog_strings, catalog_numbers)
 
-catalog_analysis.ranking_artists_cash()
+catalog_analysis.artists_ranking_conv_fanslikes()
 
 
 # catalog_analysis.fans_likes_conversion()
