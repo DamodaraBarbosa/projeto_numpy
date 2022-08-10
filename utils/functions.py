@@ -6,18 +6,36 @@ def linha2():
 
 def menu_ranking_fans():
         linha2()
-        print(f'{"                  TOP 10 ARTISTAS"}')
+        print(f'{"                  TOP 10 ARTISTS"}')
         linha2()
-        print(f'{"Posição":<18}', end='')
-        print(f'{"Artista":<25}', end='')
-        print('Fãs')
+        print(f'{"Placing":<18}', end='')
+        print(f'{"Artist":<25}', end='')
+        print('Fans')
         linha()
 
 def menu_ranking_conversion():
         linha2()
-        print(f'{"                  TOP 10 ARTISTAS"}')
+        print(f'{"                  TOP 10 ARTISTS"}')
         linha2()
-        print(f'{"Posição":<18}', end='')
-        print(f'{"Artista":<25}', end='')
-        print('Conversão (%)')
+        print(f'{"Placing":<18}', end='')
+        print(f'{"Artist":<25}', end='')
+        print('Conversion (%)')
+        linha()
+
+def menu_ranking_likes():
+        linha2()
+        print(f'{"                  TOP 10 ARTISTS"}')
+        linha2()
+        print(f'{"Placing":<18}', end='')
+        print(f'{"Artist":<24}', end='')
+        print('Likes')
+        linha()
+
+def menu_ranking_cash():
+        linha2()
+        print(f'{"                  TOP 10 ARTISTS"}')
+        linha2()
+        print(f'{"Placing":<18}', end='')
+        print(f'{"Artist":<24}', end='')
+        print('Raise (USD)')
         linha()
