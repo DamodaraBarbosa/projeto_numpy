@@ -57,3 +57,9 @@ def menu_ranking_fanslikes():
         print(f'{"Artist":<23}', end='')
         print('Likes/Fans (%)')
         print('\033[1;33m--\033[m'*30)
+
+def menu_count_musical_style():
+        linha2()
+        print(f'{"Gênero musical":<35}', end='')
+        print('Nº de artistas')
+        linha2()

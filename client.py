@@ -1,5 +1,6 @@
 import numpy as np
 from utils.ranking_analysis import Analysis
+from utils.style_analysis import Style
 
 names = np.loadtxt('nome_catalogo.txt', dtype=str)
 musical_style = np.loadtxt('genero_catalogo.txt', dtype=str)
@@ -10,9 +11,9 @@ cash = np.loadtxt('faturament_catalogo.txt')
 
 catalog_strings = np.column_stack([names, musical_style, solo_band_duo])
 catalog_numbers = np.column_stack([fans, likes, cash])
-catalog_analysis = Analysis(catalog_strings, catalog_numbers)
+catalog_analysis = Style(catalog_strings, catalog_numbers)
 
-catalog_analysis.artists_ranking_conv_fanslikes()
+print(catalog_analysis.fans_per_style())
 
 
 # catalog_analysis.fans_likes_conversion()

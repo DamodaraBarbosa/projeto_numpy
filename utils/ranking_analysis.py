@@ -1,6 +1,5 @@
 from classes_numpy import Catalog
 import numpy as np
-import collections
 from utils.functions import linha, linha2, menu_ranking_cash, menu_ranking_fanscash, menu_ranking_fans, menu_ranking_fanslikes, menu_ranking_likes
 
 class Analysis(Catalog):
